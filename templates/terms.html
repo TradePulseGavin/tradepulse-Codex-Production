@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="TradePulse terms of use for research-only market education, demo data, subscriptions, acceptable use, and support." />
+    <link rel="icon" href="/static/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/static/style.css" />
+    <title>Terms - TradePulse</title>
+  </head>
+  <body>
+    <nav class="topnav"><a class="brand" href="/">TradePulse</a><div class="navlinks"><a href="/dashboard">Dashboard</a><a href="/pricing">Pricing</a><a href="/support">Support</a><a href="/risk-disclosure">Risk</a><a href="/privacy">Privacy</a></div></nav>
+    <header class="page-header">
+      <p class="eyebrow">Terms</p>
+      <h1>Terms of use</h1>
+      <p class="subtitle">Last updated: {{ last_updated }}</p>
+    </header>
+    <main class="legal-page">
+      <section class="notice"><b>Review before launch:</b> This page is a practical draft, not legal advice. Have final terms reviewed before public paid launch.</section>
+      <section class="panel">
+        <h2>Use of TradePulse</h2>
+        <p>TradePulse is a research, education, journaling, and market organization platform. You are responsible for your own decisions and for verifying information before acting.</p>
+      </section>
+      <section class="panel">
+        <h2>No financial advice</h2>
+        <p>{{ required_disclaimer }}</p>
+      </section>
+      <section class="panel">
+        <h2>Subscriptions</h2>
+        <p>Free, Pro, Elite, and All Access plan access is managed through Stripe and Supabase subscription records. Access may take a short time to update after checkout until webhook processing is configured and verified.</p>
+      </section>
+      <section class="panel">
+        <h2>Acceptable use</h2>
+        <p>Do not use TradePulse for unlawful activity, unauthorized access, abusive automation, or attempts to bypass plan limits or security controls.</p>
+      </section>
+      <section class="panel">
+        <h2>Availability</h2>
+        <p>TradePulse may use demo, delayed, third-party, or unavailable data depending on configuration. The service may change, pause, or fail, and should not be relied on as your only source of market information.</p>
+      </section>
+      <section class="panel">
+        <h2>Account data requests</h2>
+        <p>Account export, deletion, and correction requests must go through the Account or Support paths. Deletion is reviewed before action so data is not removed by mistake.</p>
+      </section>
+      <section class="panel">
+        <h2>Support</h2>
+        <p>For account, billing, or access questions, contact {{ support_email }}.</p>
+        <div class="hero-actions"><a class="button secondary" href="/support">Support</a><a class="button secondary" href="/account">Account</a></div>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/static/style.css" />
+    <title>Launch Center - TradePulse</title>
+  </head>
+  <body data-page="launch-center" data-protected="true">
+    <nav class="topnav"><a class="brand" href="/">TradePulse</a><div class="navlinks"><a href="/dashboard">Dashboard</a><a href="/watchlists">Watchlists</a><a href="/news">News</a><a href="/scanner">Scanner</a><a href="/session-prep">Session Prep</a><a href="/review-center">Review Center</a><a href="/progress">Progress</a><a href="/risk-lab">Risk Lab</a><a href="/live-charts">Live Charts</a><a href="/copilot">Copilot</a><a href="/screenshot-analyzer">Screenshots</a><a href="/alerts">Alerts</a><a href="/paper-trade">Paper</a><a href="/journal">Journal</a><a href="/school">School</a><a href="/launch-center">Launch Center</a><a href="/production-setup">Production Setup</a><a href="/business-plan">Business Plan</a><a href="/settings">Settings</a><a href="/pricing">Pricing</a><a href="/account">Account</a></div></nav>
+
+    <header class="app-header">
+      <div>
+        <p class="eyebrow">Launch readiness</p>
+        <h1>Launch Center</h1>
+        <p class="subtitle">See what is demo-ready now and what still needs to be connected before public launch.</p>
+      </div>
+      <div class="hero-actions"><a class="button secondary" href="/production-setup">Production Setup</a><a class="button secondary" href="/business-plan">Business Plan</a><a class="button secondary" href="/settings">Settings</a></div>
+    </header>
+
+    <main>
+      <section class="notice"><b>Safety mode:</b> {{ required_disclaimer }}</section>
+
+      <section class="panel launch-hero">
+        <div>
+          <p class="eyebrow">Readiness score</p>
+          <strong id="launch-score">Loading</strong>
+          <p id="launch-summary" class="muted">Checking production services...</p>
+        </div>
+        <div id="launch-metrics" class="progress-grid"></div>
+      </section>
+
+      <section class="two-column">
+        <article class="panel">
+          <h2>Must Finish Before Public Launch</h2>
+          <div id="launch-blockers" class="stack-list"></div>
+        </article>
+        <article class="panel">
+          <h2>Plan Catalog</h2>
+          <div id="launch-plan-summary" class="stack-list"></div>
+        </article>
+      </section>
+
+      <section class="panel">
+        <h2>Launch Checklist</h2>
+        <div id="launch-groups" class="launch-groups"></div>
+      </section>
+
+      <section class="panel">
+        <h2>Safety Notes</h2>
+        <div id="launch-safe-notes" class="stack-list"></div>
+      </section>
+    </main>
+
+    <script>window.TRADEPULSE_SUPABASE_URL = "{{ supabase_url }}"; window.TRADEPULSE_SUPABASE_KEY = "{{ supabase_publishable_key }}";</script>
+    <script src="/static/auth_gate.js"></script>
+    <script src="/static/tradepulse.js"></script>
+  </body>
+</html>

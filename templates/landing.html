@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="TradePulse is a responsible trading research, journaling, chart review, and education workspace." />
+    <meta property="og:title" content="TradePulse" />
+    <meta property="og:description" content="Research-first trading workspace with charts, watchlists, paper planning, journaling, and safe AI review." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
+    <link rel="icon" href="/static/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/static/style.css" />
+    <title>TradePulse - AI trading research command center</title>
+  </head>
+  <body data-page="landing">
+    <nav class="topnav"><a class="brand" href="/">TradePulse</a><div class="navlinks"><a href="/dashboard">Dashboard</a><a href="/watchlists">Watchlists</a><a href="/news">News</a><a href="/scanner">Scanner</a><a href="/session-prep">Session Prep</a><a href="/review-center">Review Center</a><a href="/progress">Progress</a><a href="/risk-lab">Risk Lab</a><a href="/live-charts">Live Charts</a><a href="/copilot">Copilot</a><a href="/screenshot-analyzer">Screenshots</a><a href="/alerts">Alerts</a><a href="/paper-trade">Paper</a><a href="/journal">Journal</a><a href="/school">School</a><a href="/pricing">Pricing</a><a class="button small" href="/signup">Start Free</a></div></nav>
+    <header class="landing-hero terminal-hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Trading research, journaling, and education</p>
+        <h1>TradePulse</h1>
+        <p class="subtitle">A responsible AI trading research workspace with charts, watchlists, scanner context, journal review, strategy rules, and beginner learning paths.</p>
+        <div class="hero-actions"><a class="button" href="/signup">Create account</a><a class="button secondary" href="/dashboard">Open demo dashboard</a><a class="button secondary" href="/launch-center">Launch Center</a></div>
+        <p class="fineprint">{{ required_disclaimer }}</p>
+      </div>
+      <div class="hero-terminal" aria-label="TradePulse demo terminal">
+        <div class="terminal-row"><span>SPY</span><b>TradePulse Score 7.5/10</b><em>Review confirmation</em></div>
+        <div class="terminal-row"><span>QQQ</span><b>VWAP pullback</b><em>Clean but extended</em></div>
+        <div class="terminal-row"><span>NVDA</span><b>News impact high</b><em>Do not chase</em></div>
+        <canvas id="hero-chart" width="640" height="260"></canvas>
+      </div>
+    </header>
+    <main>
+      <section class="feature-band"><div><h2>Research first</h2><p>Every output is framed as setup quality, risk review, context, and education. No trade instructions.</p></div><div><h2>Demo-safe now</h2><p>The MVP uses clearly labeled demo/delayed data until real market and AI providers are connected.</p></div><div><h2>Ready to upgrade</h2><p>The Launch Center shows the exact services to connect before real customers use the site.</p></div></section>
+      <nav class="footer-links"><a href="/support">Support</a><a href="/risk-disclosure">Risk disclosure</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
+    </main>
+    <script src="/static/tradepulse.js"></script>
+  </body>
+</html>

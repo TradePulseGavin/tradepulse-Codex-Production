@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="TradePulse privacy policy for demo accounts, Supabase persistence, Stripe billing, AI research features, and data controls." />
+    <link rel="icon" href="/static/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/static/style.css" />
+    <title>Privacy - TradePulse</title>
+  </head>
+  <body>
+    <nav class="topnav"><a class="brand" href="/">TradePulse</a><div class="navlinks"><a href="/dashboard">Dashboard</a><a href="/pricing">Pricing</a><a href="/support">Support</a><a href="/risk-disclosure">Risk</a><a href="/terms">Terms</a></div></nav>
+    <header class="page-header">
+      <p class="eyebrow">Privacy</p>
+      <h1>Privacy policy</h1>
+      <p class="subtitle">Last updated: {{ last_updated }}</p>
+    </header>
+    <main class="legal-page">
+      <section class="notice"><b>Review before launch:</b> This page is a practical draft, not legal advice. Have final policy language reviewed before public paid launch.</section>
+      <section class="panel">
+        <h2>Information you provide</h2>
+        <p>TradePulse may store account email, watchlists, journal entries, strategy rules, risk rules, dashboard layouts, and school progress when Supabase persistence is configured.</p>
+      </section>
+      <section class="panel">
+        <h2>Payments</h2>
+        <p>Payments are handled by Stripe. TradePulse should not store raw payment card numbers. Stripe may provide subscription status, customer identifiers, and checkout event metadata needed to manage plan access.</p>
+      </section>
+      <section class="panel">
+        <h2>AI and screenshots</h2>
+        <p>If AI features are enabled later, user prompts, chart context, journal context, and uploaded screenshot metadata may be sent to configured AI providers to generate research commentary. Screenshot reviews are currently metadata-assisted demo reviews unless real image AI is explicitly connected later.</p>
+      </section>
+      <section class="panel">
+        <h2>Data controls</h2>
+        <p>Users can export the TradePulse account/demo data currently available to the app from the Account page. Deletion or correction uses a reviewed request workflow so account data is not removed accidentally.</p>
+        <p>When Supabase persistence is configured, Row Level Security should be used so users only access their own rows.</p>
+        <div class="hero-actions"><a class="button secondary" href="/account">Account data</a><a class="button secondary" href="/support">Support</a></div>
+      </section>
+      <section class="panel">
+        <h2>Contact</h2>
+        <p>For privacy, account, or billing questions, contact {{ support_email }}.</p>
+      </section>
+    </main>
+  </body>
+</html>

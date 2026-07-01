@@ -1,0 +1,37 @@
+services:
+  - type: web
+    name: tradepulse
+    runtime: python
+    plan: starter
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      - key: APP_NAME
+        value: TradePulse
+      - key: DEFAULT_SYMBOLS
+        value: SPY,QQQ,AAPL,NVDA,TSLA
+      - key: ENABLE_BROKER_ORDERS
+        value: "false"
+      - key: APP_BASE_URL
+        sync: false
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_PUBLISHABLE_KEY
+        sync: false
+      - key: SUPABASE_SECRET_KEY
+        sync: false
+      - key: STRIPE_SECRET_KEY
+        sync: false
+      - key: STRIPE_PRICE_ID_PRO
+        sync: false
+      - key: STRIPE_PRICE_ID_ELITE
+        sync: false
+      - key: STRIPE_PRICE_ID_ALL_ACCESS
+        sync: false
+      - key: STRIPE_WEBHOOK_SECRET
+        sync: false
+      - key: OWNER_EMAILS
+        sync: false
+      - key: OPENAI_API_KEY
+        sync: false

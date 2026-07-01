@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+  <head><meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/static/style.css" /><title>Progress - TradePulse</title></head>
+  <body data-page="progress" data-protected="true">
+    <nav class="topnav"><a class="brand" href="/">TradePulse</a><div class="navlinks"><a href="/dashboard">Dashboard</a><a href="/watchlists">Watchlists</a><a href="/news">News</a><a href="/scanner">Scanner</a><a href="/session-prep">Session Prep</a><a href="/review-center">Review Center</a><a href="/progress">Progress</a><a href="/risk-lab">Risk Lab</a><a href="/live-charts">Live Charts</a><a href="/copilot">Copilot</a><a href="/screenshot-analyzer">Screenshots</a><a href="/alerts">Alerts</a><a href="/paper-trade">Paper</a><a href="/journal">Journal</a><a href="/school">School</a><a href="/pricing">Pricing</a><a href="/account">Account</a></div></nav>
+    <header class="app-header"><div><p class="eyebrow">Demo progress</p><h1>Progress center</h1><p class="subtitle">Track the safe practice loop across prep, risk, paper review, journaling, screenshots, and lessons.</p></div><span class="pill locked">Research only</span></header>
+    <main>
+      <section class="notice"><b>Safety mode:</b> {{ required_disclaimer }}</section>
+      <section class="progress-hero panel"><div><span class="muted">Practice readiness</span><strong id="progress-score">--</strong></div><div id="progress-summary" class="stack-list"></div></section>
+      <section class="progress-grid" id="progress-milestones"></section>
+      <section class="two-column">
+        <article class="panel"><h2>Next actions</h2><div id="progress-actions" class="stack-list"></div></article>
+        <article class="panel"><h2>Review focus</h2><div id="progress-focus" class="stack-list"></div></article>
+      </section>
+    </main>
+    <script>window.TRADEPULSE_SUPABASE_URL = "{{ supabase_url }}"; window.TRADEPULSE_SUPABASE_KEY = "{{ supabase_publishable_key }}";</script><script src="/static/auth_gate.js"></script><script src="/static/tradepulse.js"></script>
+  </body>
+</html>

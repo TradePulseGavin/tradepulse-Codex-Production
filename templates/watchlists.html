@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+  <head><meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/static/style.css" /><title>Watchlists - TradePulse</title></head>
+  <body data-page="watchlists" data-protected="true" data-required-feature="watchlist">
+    <nav class="topnav"><a class="brand" href="/">TradePulse</a><div class="navlinks"><a href="/dashboard">Dashboard</a><a href="/watchlists">Watchlists</a><a href="/news">News</a><a href="/scanner">Scanner</a><a href="/session-prep">Session Prep</a><a href="/review-center">Review Center</a><a href="/progress">Progress</a><a href="/risk-lab">Risk Lab</a><a href="/live-charts">Live Charts</a><a href="/copilot">Copilot</a><a href="/screenshot-analyzer">Screenshots</a><a href="/alerts">Alerts</a><a href="/paper-trade">Paper</a><a href="/journal">Journal</a><a href="/school">School</a><a href="/pricing">Pricing</a><a href="/account">Account</a></div></nav>
+    <header class="app-header"><div><p class="eyebrow">Market organization</p><h1>Watchlists</h1><p class="subtitle">Organize symbols for research, session prep, scanner context, and journal review.</p></div><span class="pill locked">No orders</span></header>
+    <main class="two-column">
+      <section class="panel"><h2>Add symbols</h2><div class="form-grid"><select id="watchlist-target"></select><input id="watchlist-page-symbol" placeholder="Symbol" value="AMD" /><select id="watchlist-page-asset"><option value="stock">Stock</option><option value="etf">ETF</option><option value="option">Option</option><option value="future">Future</option><option value="crypto">Crypto</option></select><input id="watchlist-page-notes" placeholder="Research notes" /></div><button id="save-watchlist-item" class="full" type="button">Save symbol</button><div id="watchlist-page-result" class="response-box"></div><h2>Create watchlist</h2><div class="form-grid"><input id="new-watchlist-name" placeholder="List name" value="Morning focus" /></div><button id="create-watchlist" class="secondary full" type="button">Create watchlist</button></section>
+      <section class="panel"><h2>Saved watchlists</h2><div id="watchlists-list" class="stack-list"></div></section>
+    </main>
+    <script>window.TRADEPULSE_SUPABASE_URL = "{{ supabase_url }}"; window.TRADEPULSE_SUPABASE_KEY = "{{ supabase_publishable_key }}";</script><script src="/static/auth_gate.js"></script><script src="/static/tradepulse.js"></script>
+  </body>
+</html>

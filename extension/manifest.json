@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "Trading Copilot Overlay",
+  "version": "1.0.0",
+  "description": "Local prompt-only trading overlay that reads signals from your Trading Copilot server.",
+  "permissions": ["storage"],
+  "host_permissions": [
+    "http://127.0.0.1:8000/*",
+    "http://localhost:8000/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.tradingview.com/*",
+        "https://*.webull.com/*",
+        "https://app.webull.com/*",
+        "https://robinhood.com/*",
+        "https://*.robinhood.com/*",
+        "https://app.alpaca.markets/*",
+        "https://www.coinbase.com/*"
+      ],
+      "js": ["content.js"],
+      "css": ["overlay.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}

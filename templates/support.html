@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="TradePulse support for account access, billing, privacy, and demo-mode questions." />
+    <link rel="icon" href="/static/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/static/style.css" />
+    <title>Support - TradePulse</title>
+  </head>
+  <body data-page="support">
+    <nav class="topnav"><a class="brand" href="/">TradePulse</a><div class="navlinks"><a href="/dashboard">Dashboard</a><a href="/pricing">Pricing</a><a href="/privacy">Privacy</a><a href="/account">Account</a><a href="/login">Login</a></div></nav>
+    <header class="page-header">
+      <p class="eyebrow">Support</p>
+      <h1>Get help with TradePulse.</h1>
+      <p class="subtitle">Use these paths for account access, billing, privacy, and demo-mode questions.</p>
+    </header>
+    <main class="legal-page">
+      <section class="panel">
+        <h2>Contact</h2>
+        <p>For account, billing, privacy, or access questions, contact {{ support_email }}.</p>
+      </section>
+      <section class="panel">
+        <h2>Send a support request</h2>
+        <p>Demo mode records the request locally. Production can connect this same flow to email or a helpdesk later.</p>
+        <form id="support-ticket-form" class="stack">
+          <label>Email<input id="support-email" type="email" placeholder="you@example.com" /></label>
+          <label>Category<select id="support-category"><option value="account">Account</option><option value="billing">Billing</option><option value="privacy">Privacy</option><option value="technical">Technical</option><option value="general">General</option></select></label>
+          <label>Subject<input id="support-subject" placeholder="What do you need help with?" /></label>
+          <label>Message<textarea id="support-message" rows="5" required placeholder="Tell us what happened and what page you were using."></textarea></label>
+          <button type="submit">Send request</button>
+        </form>
+        <div id="support-ticket-result" class="response-box hidden"></div>
+      </section>
+      <section class="panel">
+        <h2>Account access</h2>
+        <p>Use password recovery if you cannot log in. If Supabase is not configured yet, the app stays in local demo mode and password emails will not send.</p>
+        <div class="hero-actions"><a class="button" href="/forgot-password">Reset password</a><a class="button secondary" href="/login">Log in</a></div>
+      </section>
+      <section class="panel">
+        <h2>Billing</h2>
+        <p>Paid plan checkout and Manage Billing use Stripe. In demo mode, billing actions safely explain what still needs to be connected.</p>
+        <div class="hero-actions"><a class="button secondary" href="/pricing">View plans</a><a class="button secondary" href="/account">Account</a></div>
+      </section>
+      <section class="panel">
+        <h2>Data requests</h2>
+        <p>Use the Account page to download available TradePulse data or create a reviewed deletion/correction request. Demo mode records the request without deleting anything automatically.</p>
+        <div class="hero-actions"><a class="button secondary" href="/account">Account data</a><a class="button secondary" href="/privacy">Privacy</a></div>
+      </section>
+      <section class="panel">
+        <h2>Safety</h2>
+        <p>TradePulse is research, education, journaling, and paper-practice software. It does not place trades or provide financial advice.</p>
+        <div class="hero-actions"><a class="button secondary" href="/risk-disclosure">Risk disclosure</a><a class="button secondary" href="/privacy">Privacy</a><a class="button secondary" href="/terms">Terms</a></div>
+      </section>
+    </main>
+    <script src="/static/support.js"></script>
+  </body>
+</html>

@@ -1,0 +1,597 @@
+{
+  "activity": {
+    "last_dashboard_snapshot": {
+      "mode": "scanner",
+      "symbols": [
+        "SPY",
+        "QQQ",
+        "NVDA",
+        "TSLA",
+        "MNQ",
+        "AMD",
+        "MSFT"
+      ]
+    },
+    "last_seen_at": "2026-07-01T11:35:41.599568+00:00",
+    "plan": "all_access"
+  },
+  "alerts": [
+    {
+      "alert_type": "price",
+      "created_at": "2026-06-30T21:52:05.353902+00:00",
+      "enabled": true,
+      "id": "c0ae0307-e99e-4765-b679-cd66c636b5ad",
+      "notes": "Demo alert verification",
+      "operator": "above",
+      "symbol": "SPY",
+      "target_value": "540",
+      "user_id": null
+    }
+  ],
+  "dashboard_layout": {
+    "hidden_panels": [
+      "learning"
+    ],
+    "mode": "scanner",
+    "updated_at": "2026-06-30T20:49:28.953396+00:00"
+  },
+  "data_requests": [
+    {
+      "created_at": "2026-07-01T11:36:08.491520+00:00",
+      "email": "demo@tradepulse.local",
+      "id": "d61d2c6d-5e7e-4242-ac1d-b12baaa2637f",
+      "notes": "live smoke",
+      "request_type": "delete",
+      "status": "received",
+      "user_id": ""
+    },
+    {
+      "created_at": "2026-07-01T11:48:46.933700+00:00",
+      "email": "demo@tradepulse.local",
+      "id": "58591816-151c-40d4-8ac6-3ce9b8abc4e4",
+      "notes": "persistence smoke",
+      "request_type": "export",
+      "status": "received",
+      "user_id": "demo-local"
+    }
+  ],
+  "journal_entries": [
+    {
+      "ai_summary": "Clean VWAP reclaim, but late scaling increased risk.",
+      "asset_type": "ETF",
+      "created_at": "2026-06-30T20:47:56.471479+00:00",
+      "direction": "Long",
+      "entry_price": 468.2,
+      "entry_reason": "Pulled back to VWAP after trend held.",
+      "exit_price": 471.1,
+      "exit_reason": "Scaled near prior high.",
+      "id": "demo-journal-1",
+      "lesson_learned": "Best entry was the first confirmed reclaim, not the extended follow-through.",
+      "mistakes": "Scaled late after the second candle.",
+      "pnl": 145,
+      "position_size": 50,
+      "result": "Win",
+      "setup_type": "VWAP bounce",
+      "stop_loss": 466.8,
+      "symbol": "QQQ",
+      "target_price": 472.0
+    },
+    {
+      "ai_summary": "News risk was high and confirmation was weak.",
+      "asset_type": "Stock",
+      "created_at": "2026-06-30T20:47:56.471483+00:00",
+      "direction": "Long",
+      "entry_price": 190.8,
+      "entry_reason": "Entered after a large green candle.",
+      "exit_price": 187.6,
+      "exit_reason": "Stopped after VWAP failed.",
+      "id": "demo-journal-2",
+      "lesson_learned": "Avoid first-candle entries on headline moves.",
+      "mistakes": "Chased news and did not wait for VWAP confirmation.",
+      "pnl": -160,
+      "position_size": 50,
+      "result": "Loss",
+      "setup_type": "News momentum",
+      "stop_loss": 187.8,
+      "symbol": "TSLA",
+      "target_price": 195.0
+    },
+    {
+      "ai_summary": "Good structure with room to improve sizing.",
+      "asset_type": "Future",
+      "created_at": "2026-06-30T20:47:56.471485+00:00",
+      "direction": "Short",
+      "entry_price": 19812.5,
+      "entry_reason": "Rejected prior high with volume fading.",
+      "exit_price": 19792.0,
+      "exit_reason": "Took partial target in elevated volatility.",
+      "id": "demo-journal-3",
+      "lesson_learned": "Size down when volatility is elevated.",
+      "mistakes": "Stop was defined but position size was slightly aggressive.",
+      "pnl": 82,
+      "position_size": 1,
+      "result": "Win",
+      "setup_type": "Range rejection",
+      "stop_loss": 19828.0,
+      "symbol": "MNQ",
+      "target_price": 19780.0
+    },
+    {
+      "asset_type": "Stock",
+      "created_at": "2026-06-30T20:49:28.964611+00:00",
+      "direction": "Long",
+      "entry_reason": "Demo endpoint verification",
+      "id": "135d6f65-31ab-403f-9209-7b5df05cf668",
+      "pnl": "42",
+      "result": "Win",
+      "setup_type": "VWAP test",
+      "symbol": "AAPL"
+    },
+    {
+      "ai_summary": "Paper practice for IWM was journaled from the reviewed demo plan. Use this as review evidence only; it is not a trade recommendation.",
+      "asset_type": "ETF",
+      "created_at": "2026-06-30T22:50:46.699241+00:00",
+      "direction": "Long",
+      "entry_price": "202.50",
+      "entry_reason": "Practice review loop test",
+      "exit_price": 205.0,
+      "exit_reason": "Followed the plan and waited for confirmation.",
+      "id": "ef9f526a-00e1-4432-918c-a088fa061937",
+      "lesson_learned": "Keep the invalidation written before entry.",
+      "mistakes": "",
+      "pnl": 10.0,
+      "position_size": "4",
+      "result": "Win",
+      "setup_type": "Opening range demo",
+      "source_id": "5e1fad66-714d-49c5-89de-54799ca827ad",
+      "source_type": "paper_trade",
+      "stop_loss": "201.40",
+      "symbol": "IWM",
+      "target_price": "205.20"
+    }
+  ],
+  "paper_trades": [
+    {
+      "asset_type": "Stock",
+      "checklist": {
+        "disclaimer": "TradePulse is for trading research, education, journaling, and market organization. It is not financial advice, does not guarantee results, and does not place trades for you. Always paper trade first and make your own final decisions.",
+        "emotional_risk": "Medium",
+        "liquidity": "Medium",
+        "news_risk": "Medium",
+        "ok": true,
+        "risk_clarity": "Good",
+        "rule_violations": [],
+        "setup_quality": 8,
+        "suggested_review_notes": [
+          "This setup is cleaner for research when entry, stop, target, and invalidation are specific.",
+          "Review these risks before making your own decision."
+        ]
+      },
+      "created_at": "2026-06-30T20:54:43.370423+00:00",
+      "direction": "Long",
+      "entry": "440",
+      "id": "669a5779-34a1-48b1-b89f-494e86d1a6e3",
+      "invalidation": "Breaks below VWAP",
+      "news": "Medium",
+      "position_size": "10",
+      "reason": "Demo paper-planning check",
+      "status": "planned",
+      "stop": "436",
+      "strategy": "VWAP practice",
+      "symbol": "MSFT",
+      "target": "448"
+    },
+    {
+      "asset_type": "Stock",
+      "checklist": {
+        "disclaimer": "TradePulse is for trading research, education, journaling, and market organization. It is not financial advice, does not guarantee results, and does not place trades for you. Always paper trade first and make your own final decisions.",
+        "emotional_risk": "Medium",
+        "liquidity": "Medium",
+        "news_risk": "Low",
+        "ok": true,
+        "risk_clarity": "Good",
+        "rule_violations": [],
+        "setup_quality": 8,
+        "suggested_review_notes": [
+          "This setup is cleaner for research when entry, stop, target, and invalidation are specific.",
+          "Review these risks before making your own decision."
+        ]
+      },
+      "created_at": "2026-06-30T22:43:17.416430+00:00",
+      "direction": "Long",
+      "entry": 210,
+      "exit_price": 214.0,
+      "id": "48de38fd-d154-426d-a8cc-0c08eccb6869",
+      "invalidation": "Breaks below VWAP",
+      "lesson_learned": "Waited for confirmation before paper exit",
+      "mistake_tags": "",
+      "news": "Low",
+      "pnl": 20.0,
+      "position_size": 5,
+      "reason": "Testing paper practice review",
+      "result": "Win",
+      "review_notes": "Followed the plan and exited near target area",
+      "reviewed_at": "2026-06-30T22:43:17.430144+00:00",
+      "status": "reviewed",
+      "stop": 207,
+      "strategy": "Demo lifecycle check",
+      "symbol": "AAPL",
+      "target": 216,
+      "updated_at": "2026-06-30T22:43:17.430140+00:00"
+    },
+    {
+      "asset_type": "ETF",
+      "checklist": {
+        "disclaimer": "TradePulse is for trading research, education, journaling, and market organization. It is not financial advice, does not guarantee results, and does not place trades for you. Always paper trade first and make your own final decisions.",
+        "emotional_risk": "Medium",
+        "liquidity": "Medium",
+        "news_risk": "Low",
+        "ok": true,
+        "risk_clarity": "Good",
+        "rule_violations": [
+          "Invalidation condition is missing."
+        ],
+        "setup_quality": 7,
+        "suggested_review_notes": [
+          "This setup is cleaner for research when entry, stop, target, and invalidation are specific.",
+          "Review these risks before making your own decision."
+        ]
+      },
+      "created_at": "2026-06-30T22:50:46.672041+00:00",
+      "direction": "Long",
+      "entry": "202.50",
+      "exit_price": 205.0,
+      "id": "5e1fad66-714d-49c5-89de-54799ca827ad",
+      "journal_entry_id": "ef9f526a-00e1-4432-918c-a088fa061937",
+      "journalized_at": "2026-06-30T22:50:46.701115+00:00",
+      "lesson_learned": "Keep the invalidation written before entry.",
+      "mistake_tags": "",
+      "news": "Low",
+      "pnl": 10.0,
+      "position_size": "4",
+      "reason": "Practice review loop test",
+      "result": "Win",
+      "review_notes": "Followed the plan and waited for confirmation.",
+      "reviewed_at": "2026-06-30T22:50:46.685793+00:00",
+      "status": "reviewed",
+      "stop": "201.40",
+      "strategy": "Opening range demo",
+      "symbol": "IWM",
+      "target": "205.20",
+      "updated_at": "2026-06-30T22:50:46.711620+00:00"
+    }
+  ],
+  "preferences": {
+    "default_symbols": "SPY,QQQ,NVDA",
+    "experience_level": "beginner",
+    "learning_goal": "Practice cleaner entries and avoid chasing.",
+    "markets": [
+      "stocks",
+      "etfs",
+      "options"
+    ],
+    "platforms": [
+      "TradingView",
+      "Webull"
+    ],
+    "risk_style": "conservative",
+    "updated_at": "2026-06-30T21:57:23.819614+00:00"
+  },
+  "risk_rules": {
+    "avoid_news_minutes": 15,
+    "max_losses_per_day": 2,
+    "max_option_premium": 250,
+    "max_risk_per_trade": 75,
+    "max_trades_per_day": 3,
+    "require_checklist": true,
+    "require_stop_loss": true
+  },
+  "risk_scenarios": [
+    {
+      "account_size": 5000.0,
+      "asset_type": "ETF",
+      "calculation": {
+        "account_size": 5000.0,
+        "asset_type": "ETF",
+        "disclaimer": "TradePulse is for trading research, education, journaling, and market organization. It is not financial advice, does not guarantee results, and does not place trades for you. Always paper trade first and make your own final decisions.",
+        "entry": 480.0,
+        "flags": [
+          "Scenario is inside the current demo risk inputs."
+        ],
+        "max_risk_dollars": 75.0,
+        "per_unit_risk": 2.5,
+        "planned_risk": 50.0,
+        "planned_size": 20.0,
+        "reward_to_risk": 2.4,
+        "risk_percent": 1.5,
+        "rules_snapshot": {
+          "avoid_news_minutes": 15,
+          "max_losses_per_day": 2,
+          "max_option_premium": 250,
+          "max_risk_per_trade": 75,
+          "max_trades_per_day": 3,
+          "require_checklist": true,
+          "require_stop_loss": true
+        },
+        "stop": 477.5,
+        "suggested_max_size": 30,
+        "symbol": "QQQ",
+        "target": 486.0,
+        "target_reward_per_unit": 6.0,
+        "within_rules": true
+      },
+      "created_at": "2026-06-30T22:32:32.574998+00:00",
+      "entry": 480.0,
+      "id": "9f7539b4-7ff3-4202-8687-d075ac90bacf",
+      "max_risk_dollars": 75.0,
+      "notes": "Demo risk lab verification",
+      "planned_risk": 50.0,
+      "planned_size": 20.0,
+      "reward_to_risk": 2.4,
+      "stop": 477.5,
+      "symbol": "QQQ",
+      "target": 486.0,
+      "user_id": null,
+      "within_rules": true
+    }
+  ],
+  "school_progress": {
+    "vwap": {
+      "lesson": "VWAP",
+      "lesson_key": "vwap",
+      "quiz_score": 100.0,
+      "status": "completed",
+      "updated_at": "2026-06-30T20:49:28.975653+00:00"
+    }
+  },
+  "screenshot_reviews": [
+    {
+      "analysis": {
+        "beginner_explanation": "A chart screenshot is useful for reviewing context, but it should not replace a written plan.",
+        "confirmation_questions": [
+          "Where is invalidation?",
+          "Is volume confirming?",
+          "Is news risk elevated?"
+        ],
+        "disclaimer": "TradePulse is for trading research, education, journaling, and market organization. It is not financial advice, does not guarantee results, and does not place trades for you. Always paper trade first and make your own final decisions.",
+        "filename": "demo-chart.png",
+        "indicator_notes": "Record which indicators are visible, whether price is extended from VWAP, and whether volume confirms the move.",
+        "mode": "demo-local",
+        "ok": true,
+        "platform": "TradingView",
+        "risk_of_chasing": "Review whether the candle is extended from VWAP before entering.",
+        "support_resistance": "Mark the nearest visible support, resistance, VWAP, and prior high/low before deciding whether the setup is clean.",
+        "symbol": "QQQ",
+        "trend_summary": "demo-chart.png is saved for demo review. Real image AI is not connected yet, so this response focuses on the review checklist rather than claiming to see the chart."
+      },
+      "created_at": "2026-06-30T21:41:56.676302+00:00",
+      "filename": "demo-chart.png",
+      "id": "baba02b6-683c-4579-83bb-7bad3a2c6b54",
+      "notes": "Testing screenshot review demo",
+      "platform": "TradingView",
+      "symbol": "QQQ"
+    },
+    {
+      "analysis": {
+        "ai_provider": "Safe demo screenshot reviewer",
+        "beginner_explanation": "This demo review does not inspect image pixels yet. It turns your screenshot notes into a safer chart-review checklist until real image AI is connected.",
+        "confirmation_questions": [
+          "Where is invalidation on the screenshot?",
+          "What level would prove the setup is not working?",
+          "Is price extended from VWAP or the nearest support/resistance?",
+          "Is there any headline or event risk before this paper setup?"
+        ],
+        "disclaimer": "TradePulse is for trading research, education, journaling, and market organization. It is not financial advice, does not guarantee results, and does not place trades for you. Always paper trade first and make your own final decisions.",
+        "filename": "spy-vwap.png",
+        "image_ai_connected": false,
+        "indicator_notes": "Indicators mentioned: VWAP, VOLUME. Confirm they support the setup instead of only decorating the chart.",
+        "journal_prompt": "Save the screenshot with one sentence for trend, one for levels, one for invalidation, and one mistake to avoid.",
+        "limit_check": {
+          "action": "screenshot_review",
+          "allowed": true,
+          "increment": 1,
+          "limit": "Included",
+          "limit_key": "screenshot_reviews",
+          "message": "Screenshot reviews is Included on All Access.",
+          "percent": 0,
+          "plan": "all_access",
+          "plan_label": "All Access",
+          "projected": 2,
+          "soft_demo": true,
+          "status": "included",
+          "upgrade_label": "",
+          "upgrade_plan": null,
+          "used": 1
+        },
+        "mode": "demo-local",
+        "ok": true,
+        "platform": "TradingView",
+        "review_tags": [
+          "Bullish context",
+          "Levels noted",
+          "Indicators noted",
+          "Chasing risk"
+        ],
+        "review_type": "metadata-assisted demo review",
+        "risk_of_chasing": "Chasing risk is elevated from your notes. Wait for confirmation, a pullback, or a clearer invalidation area in paper practice.",
+        "setup_quality": 7,
+        "support_resistance": "Your notes reference levels. Mark the nearest support, resistance, prior high/low, and the exact invalidation level before calling the setup clean.",
+        "symbol": "SPY",
+        "trend_summary": "SPY has bullish context in your notes. Treat the screenshot as a planning review: confirm trend, distance from VWAP, and invalidation before considering any paper setup."
+      },
+      "created_at": "2026-07-01T01:16:07.673276+00:00",
+      "filename": "spy-vwap.png",
+      "id": "5d98ec5b-d4ef-48bd-99c2-32eafc514529",
+      "notes": "Breakout above VWAP near resistance with strong volume.",
+      "platform": "TradingView",
+      "symbol": "SPY"
+    }
+  ],
+  "session_plans": [
+    {
+      "avoid_conditions": "Chasing large headline candles",
+      "created_at": "2026-06-30T22:06:33.430753+00:00",
+      "focus_symbols": "SPY,QQQ,NVDA",
+      "id": "e556bf46-c2ae-4363-bc0e-5633bb305c1d",
+      "market_notes": "Demo session prep verification",
+      "plan": {
+        "alerts_to_review": [
+          "SPY: SPY alert is ready for review. Current demo price is 548.42; condition is price above 540.0."
+        ],
+        "avoid_conditions": [
+          "Chasing large candles far from VWAP without written invalidation.",
+          "Adding a plan after emotional losses or missed moves.",
+          "Treating any score, alert, or AI note as financial advice."
+        ],
+        "focus_symbols": "SPY,QQQ,NVDA,TSLA,MNQ",
+        "market_notes": "Start with broad-market context, then review watchlist names one by one.",
+        "pre_trade_checks": [
+          "Before any new setup, write entry, stop, target, and invalidation first.",
+          "Review this repeated mistake: Stop was defined but position size was slightly aggressive.",
+          "Compare the next paper plan against your saved strategy rules."
+        ],
+        "risk_notes": "Conservative mode: cap paper plans at 3 for the day and pause after 2 losses.",
+        "rules_for_today": [
+          "Write the setup, stop, target, and invalidation before saving a paper plan.",
+          "Check scheduled news and wait at least 15 minutes around high-impact events.",
+          "Use alerts and screenshots as review prompts, not trade instructions."
+        ],
+        "session_goal": "Practice cleaner entries and avoid chasing."
+      },
+      "risk_notes": "Keep risk small and paper trade only",
+      "rules_for_today": "Wait for confirmation near VWAP before saving a paper plan",
+      "session_label": "New York demo prep",
+      "status": "planned",
+      "user_id": null
+    }
+  ],
+  "strategies": [],
+  "support_tickets": [
+    {
+      "category": "technical",
+      "created_at": "2026-07-01T11:43:16.912959+00:00",
+      "email": "demo@tradepulse.local",
+      "id": "d40ae17a-1c8f-4aa6-bb13-71eba3c6a3d6",
+      "message": "Checking the support form.",
+      "status": "received",
+      "subject": "Live smoke"
+    },
+    {
+      "category": "general",
+      "created_at": "2026-07-01T11:48:46.920898+00:00",
+      "email": "demo@tradepulse.local",
+      "id": "4aff2a0f-a8bc-4c55-a34a-22f78346d467",
+      "message": "Checking fallback.",
+      "status": "received",
+      "subject": "Persistence smoke"
+    },
+    {
+      "category": "account",
+      "created_at": "2026-07-01T11:50:50.170177+00:00",
+      "email": "privacy-check@example.com",
+      "id": "9ab9db79-454d-4abc-80da-1f000257cd8e",
+      "message": "owned",
+      "status": "received",
+      "subject": "Include me"
+    },
+    {
+      "category": "account",
+      "created_at": "2026-07-01T11:50:50.181691+00:00",
+      "email": "not-this-user@example.com",
+      "id": "fad9a94f-a3ed-449b-88fe-92f71eb823bc",
+      "message": "other",
+      "status": "received",
+      "subject": "Exclude me"
+    }
+  ],
+  "usage_events": [
+    {
+      "created_at": "2026-07-01T00:44:02.131000+00:00",
+      "id": "a2a09c8c-1d16-41e7-8b69-e5701f22eeb5",
+      "kind": "scanner_run",
+      "metadata": {
+        "symbols": "SPY,QQQ,NVDA,TSLA,MNQ,AMD,MSFT"
+      }
+    },
+    {
+      "created_at": "2026-07-01T00:44:59.393563+00:00",
+      "id": "9e77c635-df9e-4248-b11a-cfbd9e88c001",
+      "kind": "scanner_run",
+      "metadata": {
+        "symbols": "SPY,QQQ,NVDA,TSLA,MNQ,AMD,MSFT"
+      }
+    }
+  ],
+  "watchlists": [
+    {
+      "created_at": "2026-06-30T20:47:56.471452+00:00",
+      "id": "demo-watchlist",
+      "items": [
+        {
+          "asset_type": "etf",
+          "created_at": "2026-06-30T20:47:56.471461+00:00",
+          "id": "demo-spy",
+          "notes": "Index is balanced; clean entries need confirmation near prior high.",
+          "symbol": "SPY",
+          "watchlist_id": "demo-watchlist"
+        },
+        {
+          "asset_type": "etf",
+          "created_at": "2026-06-30T20:47:56.471466+00:00",
+          "id": "demo-qqq",
+          "notes": "Tech strength is present, but chasing extended candles is the main risk.",
+          "symbol": "QQQ",
+          "watchlist_id": "demo-watchlist"
+        },
+        {
+          "asset_type": "stock",
+          "created_at": "2026-06-30T20:47:56.471469+00:00",
+          "id": "demo-nvda",
+          "notes": "Momentum is strong; wait for confirmation instead of chasing the first spike.",
+          "symbol": "NVDA",
+          "watchlist_id": "demo-watchlist"
+        },
+        {
+          "asset_type": "stock",
+          "created_at": "2026-06-30T20:47:56.471472+00:00",
+          "id": "demo-tsla",
+          "notes": "News-driven move; confirmation matters more than direction bias.",
+          "symbol": "TSLA",
+          "watchlist_id": "demo-watchlist"
+        },
+        {
+          "asset_type": "future",
+          "created_at": "2026-06-30T20:47:56.471474+00:00",
+          "id": "demo-mnq",
+          "notes": "Futures volatility is elevated; size and stop clarity are the key checks.",
+          "symbol": "MNQ",
+          "watchlist_id": "demo-watchlist"
+        },
+        {
+          "asset_type": "stock",
+          "created_at": "2026-06-30T20:49:28.940470+00:00",
+          "id": "62636fae-0eb6-4288-a695-c4c7ff227f21",
+          "notes": "",
+          "symbol": "AMD",
+          "watchlist_id": "demo-watchlist"
+        }
+      ],
+      "name": "Demo Watchlist"
+    },
+    {
+      "created_at": "2026-06-30T23:04:32.749854+00:00",
+      "id": "a74f9151-2f16-4dc5-883b-a8de696feda7",
+      "items": [
+        {
+          "asset_type": "stock",
+          "created_at": "2026-06-30T23:04:32.763311+00:00",
+          "id": "b1420e47-0aaa-48fc-9ebd-5476bde6e542",
+          "notes": "Demo watchlist manager test",
+          "symbol": "MSFT",
+          "watchlist_id": "a74f9151-2f16-4dc5-883b-a8de696feda7"
+        }
+      ],
+      "name": "Swing research demo"
+    }
+  ]
+}

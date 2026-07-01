@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/static/style.css" />
+    <title>Live Charts - TradePulse</title>
+  </head>
+  <body data-page="live-charts" data-protected="true" data-required-feature="live_charts">
+    <nav class="topnav"><a class="brand" href="/">TradePulse</a><div class="navlinks"><a href="/dashboard">Dashboard</a><a href="/watchlists">Watchlists</a><a href="/news">News</a><a href="/scanner">Scanner</a><a href="/session-prep">Session Prep</a><a href="/review-center">Review Center</a><a href="/progress">Progress</a><a href="/risk-lab">Risk Lab</a><a href="/live-charts">Live Charts</a><a href="/copilot">Copilot</a><a href="/screenshot-analyzer">Screenshots</a><a href="/alerts">Alerts</a><a href="/paper-trade">Paper</a><a href="/journal">Journal</a><a href="/school">School</a><a href="/pricing">Pricing</a><a href="/account">Account</a></div></nav>
+    <header class="app-header"><div><p class="eyebrow">Elite workspace</p><h1>Live Charts</h1><p class="subtitle">Candlestick workspace using {{ demo_mode_label }} until live market data is connected.</p></div><span class="pill">Demo data clearly labeled</span></header>
+    <main class="chart-workspace">
+      <aside class="panel sidebar"><h2>Watchlist</h2><div id="chart-watchlist" class="stack-list"></div></aside>
+      <section class="panel chart-main"><div class="toolbar compact"><label>Symbol<input id="chart-symbol" value="SPY" /></label><label>Asset<select id="asset-type"><option>Stocks</option><option>ETFs</option><option>Options</option><option>Futures</option><option>Crypto later</option></select></label><label>Timeframe<select id="timeframe"><option>1m</option><option selected>5m</option><option>15m</option><option>30m</option><option>1h</option><option>4h</option><option>1D</option></select></label><label>Style<select id="chart-style"><option>Candles</option><option>Line</option><option>Area</option><option>Heikin Ashi</option></select></label><label class="toggle"><input id="live-data" type="checkbox" /> Real research data</label><button id="load-chart" type="button">Load</button></div><div class="tool-row"><button class="icon-button" data-tool="horizontal" title="Horizontal line">H</button><button class="icon-button" data-tool="vertical" title="Vertical line">V</button><button class="icon-button" data-tool="trend" title="Trendline">T</button><button class="icon-button" data-tool="note" title="Note">N</button><button class="icon-button" data-tool="clear" title="Clear annotations">X</button><label><input type="checkbox" checked /> VWAP</label><label><input type="checkbox" checked /> EMA 9</label><label><input type="checkbox" /> EMA 20</label><label><input type="checkbox" /> EMA 50</label><label><input type="checkbox" /> RSI</label><label><input type="checkbox" checked /> Volume</label></div><canvas id="main-chart" class="chart-canvas large" width="1100" height="560"></canvas></section>
+      <aside class="panel sidebar"><h2>AI analysis</h2><div id="chart-ai-panel" class="stack-list"></div><button id="explain-vwap" data-explain="VWAP" class="secondary full" type="button">Explain VWAP</button><button id="save-chart-layout" class="full" type="button">Save layout</button></aside>
+    </main>
+    <script>window.TRADEPULSE_SUPABASE_URL = "{{ supabase_url }}"; window.TRADEPULSE_SUPABASE_KEY = "{{ supabase_publishable_key }}";</script><script src="/static/auth_gate.js"></script><script src="/static/tradepulse.js"></script>
+  </body>
+</html>
+

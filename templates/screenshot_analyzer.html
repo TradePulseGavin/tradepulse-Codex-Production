@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+  <head><meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/static/style.css" /><title>Screenshot Analyzer - TradePulse</title></head>
+  <body data-page="screenshot-analyzer" data-protected="true" data-required-feature="screenshot_analyzer">
+    <nav class="topnav"><a class="brand" href="/">TradePulse</a><div class="navlinks"><a href="/dashboard">Dashboard</a><a href="/watchlists">Watchlists</a><a href="/news">News</a><a href="/scanner">Scanner</a><a href="/session-prep">Session Prep</a><a href="/review-center">Review Center</a><a href="/progress">Progress</a><a href="/risk-lab">Risk Lab</a><a href="/live-charts">Live Charts</a><a href="/copilot">Copilot</a><a href="/screenshot-analyzer">Screenshots</a><a href="/alerts">Alerts</a><a href="/paper-trade">Paper</a><a href="/journal">Journal</a><a href="/school">School</a><a href="/pricing">Pricing</a><a href="/account">Account</a></div></nav>
+    <header class="app-header"><div><p class="eyebrow">All Access chart review</p><h1>Screenshot Analyzer</h1><p class="subtitle">Upload chart screenshots for a structured demo review checklist before real image AI is connected.</p></div><span class="pill all-access-lock">All Access</span></header>
+    <main class="two-column">
+      <section class="panel"><h2>Chart screenshot</h2><div class="form-grid"><input id="screen-symbol" placeholder="Symbol" value="SPY" /><select id="screen-platform"><option>TradingView</option><option>Webull</option><option>Thinkorswim</option><option>NinjaTrader</option><option>Coinbase</option><option>Other</option></select></div><label class="upload-box">Screenshot<input id="screen-file" type="file" accept="image/*" /></label><div id="screen-preview" class="screenshot-preview"></div><textarea id="screen-notes" rows="5" placeholder="What were you looking at? Trend, VWAP, support/resistance, news, entry idea, or mistake to review."></textarea><button id="analyze-screenshot" class="full" type="button">Analyze screenshot</button><div id="screen-result" class="response-box"></div></section>
+      <section class="panel"><h2>Review history</h2><div id="screen-review-list" class="stack-list"></div></section>
+    </main>
+    <script>window.TRADEPULSE_SUPABASE_URL = "{{ supabase_url }}"; window.TRADEPULSE_SUPABASE_KEY = "{{ supabase_publishable_key }}";</script><script src="/static/auth_gate.js"></script><script src="/static/tradepulse.js"></script>
+  </body>
+</html>
+

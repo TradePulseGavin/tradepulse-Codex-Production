@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en">
+  <head><meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/static/style.css" /><title>Strategy Builder - TradePulse</title></head>
+  <body data-page="strategy-builder" data-protected="true" data-required-feature="strategy_builder">
+    <nav class="topnav"><a class="brand" href="/">TradePulse</a><div class="navlinks"><a href="/dashboard">Dashboard</a><a href="/watchlists">Watchlists</a><a href="/news">News</a><a href="/scanner">Scanner</a><a href="/session-prep">Session Prep</a><a href="/review-center">Review Center</a><a href="/progress">Progress</a><a href="/risk-lab">Risk Lab</a><a href="/live-charts">Live Charts</a><a href="/copilot">Copilot</a><a href="/screenshot-analyzer">Screenshots</a><a href="/alerts">Alerts</a><a href="/paper-trade">Paper</a><a href="/journal">Journal</a><a href="/school">School</a><a href="/pricing">Pricing</a><a href="/account">Account</a></div></nav>
+    <header class="app-header"><div><p class="eyebrow">All Access strategy lab</p><h1>AI Strategy Builder</h1><p class="subtitle">Turn a plain-English trading idea into structured rules for scanner and journal review.</p></div><span class="pill all-access-lock">All Access</span></header>
+    <main class="two-column"><section class="panel"><h2>Describe your setup</h2><textarea id="strategy-prompt" rows="9">I like trading VWAP bounces on QQQ and NVDA.</textarea><button id="build-strategy" class="full" type="button">Build strategy</button></section><section class="panel"><h2>Structured rules</h2><div id="strategy-result" class="response-box"></div><h2>Saved demo strategies</h2><div id="saved-strategies" class="stack-list"></div></section></main>
+    <script>window.TRADEPULSE_SUPABASE_URL = "{{ supabase_url }}"; window.TRADEPULSE_SUPABASE_KEY = "{{ supabase_publishable_key }}";</script><script src="/static/auth_gate.js"></script><script src="/static/tradepulse.js"></script>
+  </body>
+</html>
+

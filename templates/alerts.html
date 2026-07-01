@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+  <head><meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/static/style.css" /><title>Alerts - TradePulse</title></head>
+  <body data-page="alerts" data-protected="true" data-required-feature="alerts">
+    <nav class="topnav"><a class="brand" href="/">TradePulse</a><div class="navlinks"><a href="/dashboard">Dashboard</a><a href="/watchlists">Watchlists</a><a href="/news">News</a><a href="/scanner">Scanner</a><a href="/session-prep">Session Prep</a><a href="/review-center">Review Center</a><a href="/progress">Progress</a><a href="/risk-lab">Risk Lab</a><a href="/live-charts">Live Charts</a><a href="/copilot">Copilot</a><a href="/screenshot-analyzer">Screenshots</a><a href="/alerts">Alerts</a><a href="/paper-trade">Paper</a><a href="/journal">Journal</a><a href="/school">School</a><a href="/pricing">Pricing</a><a href="/account">Account</a></div></nav>
+    <header class="app-header"><div><p class="eyebrow">Watch and review</p><h1>Alerts</h1><p class="subtitle">Create safe demo alerts for symbols, scores, news risk, and personal risk checks.</p></div><span class="pill">Demo alerts only</span></header>
+    <main class="two-column">
+      <section class="panel"><h2>New alert</h2><div class="form-grid"><input id="alert-symbol" placeholder="Symbol" value="SPY" /><select id="alert-type"><option value="price">Price</option><option value="score">TradePulse score</option><option value="news">News risk</option><option value="risk">Risk rule</option></select><select id="alert-operator"><option value="above">Above</option><option value="below">Below</option><option value="near">Near</option></select><input id="alert-target" placeholder="Target value" value="550" /></div><textarea id="alert-notes" rows="4" placeholder="Why do you want to review this condition?"></textarea><button id="save-alert" class="full" type="button">Save alert</button><div id="alert-save-result" class="response-box"></div></section>
+      <section class="panel"><div class="panel-title-row"><h2>Active alerts</h2><button id="evaluate-alerts" class="secondary" type="button">Evaluate</button></div><div id="alert-list" class="stack-list"></div></section>
+    </main>
+    <script>window.TRADEPULSE_SUPABASE_URL = "{{ supabase_url }}"; window.TRADEPULSE_SUPABASE_KEY = "{{ supabase_publishable_key }}";</script><script src="/static/auth_gate.js"></script><script src="/static/tradepulse.js"></script>
+  </body>
+</html>
+

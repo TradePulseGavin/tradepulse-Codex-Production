@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="TradePulse production setup for Supabase accounts, Stripe subscriptions, OpenAI research, market data, and launch safety." />
+    <link rel="icon" href="/static/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/static/style.css" />
+    <title>Production Setup - TradePulse</title>
+  </head>
+  <body data-page="production-setup" data-protected="true">
+    <nav class="topnav"><a class="brand" href="/">TradePulse</a><div class="navlinks"><a href="/dashboard">Dashboard</a><a href="/launch-center">Launch Center</a><a href="/business-plan">Business Plan</a><a href="/settings">Settings</a><a href="/pricing">Pricing</a><a href="/support">Support</a><a href="/account">Account</a></div></nav>
+
+    <header class="app-header">
+      <div>
+        <p class="eyebrow">Real connection phase</p>
+        <h1>Production Setup</h1>
+        <p class="subtitle">Connect accounts, paid plans, OpenAI research, and market data using environment variables while keeping broker execution disabled.</p>
+      </div>
+      <div class="hero-actions"><a class="button secondary" href="/launch-center">Launch Center</a><a class="button secondary" href="/business-plan">Business Plan</a></div>
+    </header>
+
+    <main>
+      <section class="notice"><b>Secret safety:</b> Do not paste API keys into chat or frontend code. Add them as hosted environment variables only.</section>
+
+      <section class="panel launch-hero">
+        <div>
+          <p class="eyebrow">Production readiness</p>
+          <strong id="production-score">Loading</strong>
+          <p id="production-summary" class="muted">Checking required connection pieces...</p>
+        </div>
+        <div id="production-metrics" class="progress-grid"></div>
+      </section>
+
+      <section class="two-column">
+        <article class="panel">
+          <h2>Required Next Actions</h2>
+          <div id="production-actions" class="stack-list"></div>
+        </article>
+        <article class="panel">
+          <h2>Important URLs</h2>
+          <div id="production-urls" class="stack-list"></div>
+        </article>
+      </section>
+
+      <section class="panel">
+        <h2>Connection Checklist</h2>
+        <div id="production-groups" class="launch-groups"></div>
+      </section>
+
+      <section class="two-column">
+        <article class="panel">
+          <h2>Runtime Modes</h2>
+          <div id="production-modes" class="stack-list"></div>
+        </article>
+        <article class="panel">
+          <h2>Safety Notes</h2>
+          <div id="production-safe-notes" class="stack-list"></div>
+        </article>
+      </section>
+    </main>
+
+    <script>window.TRADEPULSE_SUPABASE_URL = "{{ supabase_url }}"; window.TRADEPULSE_SUPABASE_KEY = "{{ supabase_publishable_key }}";</script>
+    <script src="/static/auth_gate.js"></script>
+    <script src="/static/tradepulse.js"></script>
+  </body>
+</html>

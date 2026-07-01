@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+  <head><meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/static/style.css" /><title>Session Prep - TradePulse</title></head>
+  <body data-page="session-prep" data-protected="true" data-required-feature="session_prep">
+    <nav class="topnav"><a class="brand" href="/">TradePulse</a><div class="navlinks"><a href="/dashboard">Dashboard</a><a href="/watchlists">Watchlists</a><a href="/news">News</a><a href="/scanner">Scanner</a><a href="/session-prep">Session Prep</a><a href="/review-center">Review Center</a><a href="/progress">Progress</a><a href="/risk-lab">Risk Lab</a><a href="/live-charts">Live Charts</a><a href="/copilot">Copilot</a><a href="/screenshot-analyzer">Screenshots</a><a href="/alerts">Alerts</a><a href="/paper-trade">Paper</a><a href="/journal">Journal</a><a href="/school">School</a><a href="/pricing">Pricing</a><a href="/account">Account</a></div></nav>
+    <header class="app-header"><div><p class="eyebrow">Daily workflow</p><h1>Session prep</h1><p class="subtitle">Turn your watchlist, alerts, memory, and risk rules into a written research plan before paper practice.</p></div><span class="pill locked">Research only</span></header>
+    <main class="two-column">
+      <section class="panel"><h2>Today&apos;s plan</h2><div class="form-grid"><input id="prep-session-label" placeholder="Session label" value="New York demo prep" /><input id="prep-symbols" placeholder="Focus symbols" value="SPY,QQQ,NVDA" /></div><textarea id="prep-market-notes" rows="4" placeholder="Market context to check first"></textarea><textarea id="prep-risk-notes" rows="4" placeholder="Risk limits for this session"></textarea><textarea id="prep-rules" rows="5" placeholder="Rules for today"></textarea><textarea id="prep-avoid" rows="5" placeholder="Avoid conditions"></textarea><button id="save-session-prep" class="full" type="button">Save session prep</button><div id="session-prep-result" class="response-box"></div></section>
+      <section class="panel"><h2>Suggested checklist</h2><div id="session-prep-suggested" class="stack-list"></div><h2>Saved prep history</h2><div id="session-prep-history" class="stack-list"></div></section>
+    </main>
+    <script>window.TRADEPULSE_SUPABASE_URL = "{{ supabase_url }}"; window.TRADEPULSE_SUPABASE_KEY = "{{ supabase_publishable_key }}";</script><script src="/static/auth_gate.js"></script><script src="/static/tradepulse.js"></script>
+  </body>
+</html>
+

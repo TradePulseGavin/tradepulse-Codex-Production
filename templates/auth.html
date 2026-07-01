@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="en">
+  <head><meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/static/style.css" /><title>{{ auth_title }}</title></head>
+  <body data-page="auth">
+    <nav class="topnav"><a class="brand" href="/">TradePulse</a><div class="navlinks"><a href="/pricing">Pricing</a><a href="/dashboard">Dashboard</a></div></nav>
+    <main class="auth-shell"><section class="panel auth-card"><p class="eyebrow">Account</p><h1>{{ auth_title }}</h1><p class="subtitle">Supabase handles login and signup using your public project URL and anon key.</p><form id="auth-form" class="stack"><label>Email<input id="email" type="email" required placeholder="you@example.com" /></label><label>Password<input id="password" type="password" required minlength="6" placeholder="At least 6 characters" /></label><button type="submit">{{ auth_button }}</button></form><p id="auth-message" class="response-box hidden"></p><p><a href="/forgot-password">Forgot password?</a></p><p>{{ auth_switch_text }} <a href="{{ auth_switch_href }}">{{ auth_switch_label }}</a></p></section></main>
+    <script>window.TRADEPULSE_AUTH_MODE = "{{ auth_mode }}"; window.TRADEPULSE_SUPABASE_URL = "{{ supabase_url }}"; window.TRADEPULSE_SUPABASE_KEY = "{{ supabase_publishable_key }}";</script><script src="/static/auth.js"></script>
+  </body>
+</html>
+

@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="TradePulse risk disclosure for research-only market education, demo data, AI limits, paper trading, and no trade execution." />
+    <link rel="icon" href="/static/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/static/style.css" />
+    <title>Risk Disclosure - TradePulse</title>
+  </head>
+  <body>
+    <nav class="topnav"><a class="brand" href="/">TradePulse</a><div class="navlinks"><a href="/dashboard">Dashboard</a><a href="/pricing">Pricing</a><a href="/support">Support</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></div></nav>
+    <header class="page-header">
+      <p class="eyebrow">Risk disclosure</p>
+      <h1>Trading risk is real.</h1>
+      <p class="subtitle">Last updated: {{ last_updated }}</p>
+    </header>
+    <main class="legal-page">
+      <section class="panel">
+        <h2>Research and education only</h2>
+        <p>{{ required_disclaimer }}</p>
+        <p>TradePulse provides organization, research commentary, journaling tools, educational explanations, and demo workflows. It does not provide individualized investment, legal, tax, or financial advice.</p>
+      </section>
+      <section class="panel">
+        <h2>No trade execution</h2>
+        <p>TradePulse does not place trades for you, route orders, manage brokerage accounts, or operate as an automated trading system. Any future broker-related feature should remain disabled unless it has been separately designed, tested, and approved.</p>
+      </section>
+      <section class="panel">
+        <h2>Market and product risk</h2>
+        <p>Stocks, ETFs, options, futures, crypto, and other financial products can lose value quickly. Options and futures can involve leverage, volatility, margin requirements, liquidity risk, spread risk, and contract-specific risks. You are responsible for understanding any product before using real money.</p>
+      </section>
+      <section class="panel">
+        <h2>Data and AI limits</h2>
+        <p>Demo or delayed data may be inaccurate, incomplete, or stale. AI and scanner outputs can be wrong or incomplete. Always verify information with your broker, charting platform, exchange, and other trusted sources before making your own decisions.</p>
+      </section>
+      <section class="panel">
+        <h2>Paper trade first</h2>
+        <p>TradePulse is designed to encourage paper trading, planning, journaling, and review before real-money decisions. If you are new, start with simulation and small controlled learning steps.</p>
+      </section>
+      <section class="panel">
+        <h2>Questions</h2>
+        <p>For account or policy questions, contact {{ support_email }}.</p>
+        <div class="hero-actions"><a class="button secondary" href="/support">Support</a><a class="button secondary" href="/pricing">View plans</a></div>
+      </section>
+    </main>
+  </body>
+</html>

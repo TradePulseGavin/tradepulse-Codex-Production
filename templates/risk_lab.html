@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+  <head><meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/static/style.css" /><title>Risk Lab - TradePulse</title></head>
+  <body data-page="risk-lab" data-protected="true" data-required-feature="paper_trade">
+    <nav class="topnav"><a class="brand" href="/">TradePulse</a><div class="navlinks"><a href="/dashboard">Dashboard</a><a href="/watchlists">Watchlists</a><a href="/news">News</a><a href="/scanner">Scanner</a><a href="/session-prep">Session Prep</a><a href="/review-center">Review Center</a><a href="/progress">Progress</a><a href="/risk-lab">Risk Lab</a><a href="/live-charts">Live Charts</a><a href="/copilot">Copilot</a><a href="/screenshot-analyzer">Screenshots</a><a href="/alerts">Alerts</a><a href="/paper-trade">Paper</a><a href="/journal">Journal</a><a href="/school">School</a><a href="/pricing">Pricing</a><a href="/account">Account</a></div></nav>
+    <header class="app-header"><div><p class="eyebrow">Risk review</p><h1>Risk lab</h1><p class="subtitle">Estimate paper scenario risk before saving a practice plan or journal review.</p></div><span class="pill locked">Calculator only</span></header>
+    <main class="two-column">
+      <section class="panel"><h2>Scenario inputs</h2><div class="form-grid"><input id="risk-symbol" placeholder="Symbol" value="SPY" /><select id="risk-asset"><option>Stock</option><option>ETF</option><option>Option</option><option>Future</option></select><input id="risk-account" type="number" min="0" placeholder="Demo account size" value="5000" /><input id="risk-max-dollars" type="number" min="0" placeholder="Max dollar risk" value="75" /><input id="risk-entry" type="number" step="0.01" placeholder="Entry" value="550" /><input id="risk-stop" type="number" step="0.01" placeholder="Stop" value="547.5" /><input id="risk-target" type="number" step="0.01" placeholder="Target" value="555" /><input id="risk-size" type="number" min="0" step="1" placeholder="Planned size" value="10" /></div><textarea id="risk-notes" rows="5" placeholder="Why this risk scenario is worth paper-reviewing"></textarea><button id="save-risk-scenario" class="full" type="button">Calculate and save scenario</button><div id="risk-lab-result" class="response-box"></div></section>
+      <section class="panel"><h2>Risk summary</h2><div id="risk-lab-summary" class="stack-list"></div><h2>Saved scenarios</h2><div id="risk-scenario-list" class="stack-list"></div></section>
+    </main>
+    <script>window.TRADEPULSE_SUPABASE_URL = "{{ supabase_url }}"; window.TRADEPULSE_SUPABASE_KEY = "{{ supabase_publishable_key }}";</script><script src="/static/auth_gate.js"></script><script src="/static/tradepulse.js"></script>
+  </body>
+</html>

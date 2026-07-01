@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+  <head><meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/static/style.css" /><title>Onboarding - TradePulse</title></head>
+  <body data-page="onboarding" data-protected="true">
+    <nav class="topnav"><a class="brand" href="/">TradePulse</a><div class="navlinks"><a href="/dashboard">Dashboard</a><a href="/watchlists">Watchlists</a><a href="/news">News</a><a href="/scanner">Scanner</a><a href="/session-prep">Session Prep</a><a href="/review-center">Review Center</a><a href="/progress">Progress</a><a href="/risk-lab">Risk Lab</a><a href="/live-charts">Live Charts</a><a href="/copilot">Copilot</a><a href="/screenshot-analyzer">Screenshots</a><a href="/alerts">Alerts</a><a href="/paper-trade">Paper</a><a href="/journal">Journal</a><a href="/school">School</a><a href="/pricing">Pricing</a><a href="/account">Account</a></div></nav>
+    <header class="app-header"><div><p class="eyebrow">Personal setup</p><h1>Onboarding</h1><p class="subtitle">Set your trading-learning profile so TradePulse can personalize research and review prompts.</p></div><span class="pill">Saved locally in demo mode</span></header>
+    <main class="two-column">
+      <section class="panel"><h2>Profile</h2><div class="form-grid"><label>Experience<select id="pref-experience"><option value="beginner">Beginner</option><option value="intermediate">Intermediate</option><option value="advanced">Advanced</option></select></label><label>Risk style<select id="pref-risk"><option value="conservative">Conservative</option><option value="balanced">Balanced</option><option value="aggressive">Aggressive</option></select></label><label>Markets<input id="pref-markets" placeholder="stocks, etfs, options" /></label><label>Platforms<input id="pref-platforms" placeholder="TradingView, Webull" /></label><label>Default symbols<input id="pref-symbols" placeholder="SPY,QQQ,NVDA,TSLA" /></label></div><textarea id="pref-goal" rows="5" placeholder="What are you trying to improve first?"></textarea><button id="save-preferences" class="full" type="button">Save onboarding</button><div id="preferences-result" class="response-box"></div></section>
+      <section class="panel"><h2>How this changes TradePulse</h2><div id="preferences-preview" class="stack-list"></div></section>
+      <section class="panel span-2">
+        <div class="panel-title-row"><h2>First Session Checklist</h2><span id="onboarding-score" class="pill">Loading</span></div>
+        <p class="muted">Use this to turn the demo into a guided first session before connecting real AI or data.</p>
+        <div id="onboarding-checklist" class="stack-list"></div>
+      </section>
+    </main>
+    <script>window.TRADEPULSE_SUPABASE_URL = "{{ supabase_url }}"; window.TRADEPULSE_SUPABASE_KEY = "{{ supabase_publishable_key }}";</script><script src="/static/auth_gate.js"></script><script src="/static/tradepulse.js"></script>
+  </body>
+</html>
+

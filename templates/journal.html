@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+  <head><meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/static/style.css" /><title>Journal - TradePulse</title></head>
+  <body data-page="journal" data-protected="true" data-required-feature="journal" data-replay="{{ replay_mode }}">
+    <nav class="topnav"><a class="brand" href="/">TradePulse</a><div class="navlinks"><a href="/dashboard">Dashboard</a><a href="/watchlists">Watchlists</a><a href="/news">News</a><a href="/scanner">Scanner</a><a href="/session-prep">Session Prep</a><a href="/review-center">Review Center</a><a href="/progress">Progress</a><a href="/risk-lab">Risk Lab</a><a href="/live-charts">Live Charts</a><a href="/copilot">Copilot</a><a href="/screenshot-analyzer">Screenshots</a><a href="/alerts">Alerts</a><a href="/paper-trade">Paper</a><a href="/journal">Journal</a><a href="/school">School</a><a href="/pricing">Pricing</a><a href="/account">Account</a></div></nav>
+    <header class="app-header"><div><p class="eyebrow">Review loop</p><h1>Trading journal</h1><p class="subtitle">Log trades, generate review notes, and replay mistakes without shame.</p></div><a class="button secondary" href="/journal/replay">Replay mode</a></header>
+    <main class="journal-layout">
+      <section class="panel"><h2>New journal entry</h2><div class="form-grid"><input id="journal-symbol" placeholder="Symbol" /><select id="journal-asset"><option>Stock</option><option>ETF</option><option>Option</option><option>Future</option></select><select id="journal-direction"><option>Long</option><option>Short</option></select><select id="journal-result"><option value="">Result</option><option>Win</option><option>Loss</option><option>Breakeven</option></select><input id="journal-entry" placeholder="Entry" /><input id="journal-stop" placeholder="Stop" /><input id="journal-target" placeholder="Target" /><input id="journal-exit" placeholder="Exit" /><input id="journal-size" placeholder="Position size" /><input id="journal-pnl" placeholder="P/L" /><input id="journal-setup" placeholder="Setup type" /></div><textarea id="journal-reason" rows="4" placeholder="Entry reason, exit reason, mistakes, lesson learned"></textarea><label class="upload-box">Chart screenshot<input id="screenshot-upload" type="file" accept="image/*" /></label><button id="save-journal" class="full" type="button">Generate AI journal notes</button><div id="journal-ai-result" class="response-box"></div></section>
+      <section class="panel"><h2>Weekly review</h2><div id="weekly-review" class="stack-list"></div><h2>Recent entries</h2><div id="journal-entry-list" class="stack-list"></div><h2>Replay cards</h2><div id="replay-cards" class="stack-list"></div></section>
+    </main>
+    <script>window.TRADEPULSE_SUPABASE_URL = "{{ supabase_url }}"; window.TRADEPULSE_SUPABASE_KEY = "{{ supabase_publishable_key }}";</script><script src="/static/auth_gate.js"></script><script src="/static/tradepulse.js"></script>
+  </body>
+</html>
+

@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Internal TradePulse business plan with pricing, launch milestones, operating assumptions, safety controls, and next actions." />
+    <link rel="icon" href="/static/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/static/style.css" />
+    <title>Business Plan - TradePulse</title>
+  </head>
+  <body data-page="business-plan" data-protected="true">
+    <nav class="topnav"><a class="brand" href="/">TradePulse</a><div class="navlinks"><a href="/dashboard">Dashboard</a><a href="/watchlists">Watchlists</a><a href="/news">News</a><a href="/scanner">Scanner</a><a href="/session-prep">Session Prep</a><a href="/review-center">Review Center</a><a href="/progress">Progress</a><a href="/risk-lab">Risk Lab</a><a href="/live-charts">Live Charts</a><a href="/copilot">Copilot</a><a href="/screenshot-analyzer">Screenshots</a><a href="/alerts">Alerts</a><a href="/paper-trade">Paper</a><a href="/journal">Journal</a><a href="/school">School</a><a href="/launch-center">Launch Center</a><a href="/production-setup">Production Setup</a><a href="/settings">Settings</a><a href="/pricing">Pricing</a><a href="/account">Account</a></div></nav>
+
+    <header class="app-header">
+      <div>
+        <p class="eyebrow">Builder workspace</p>
+        <h1>Business Plan</h1>
+        <p class="subtitle">A safe, practical operating plan for turning TradePulse from a stable demo into a public paid product.</p>
+      </div>
+      <div class="hero-actions"><a class="button secondary" href="/production-setup">Production Setup</a><a class="button secondary" href="/launch-center">Launch Center</a><a class="button secondary" href="/pricing">Pricing</a></div>
+    </header>
+
+    <main>
+      <section class="notice"><b>Planning note:</b> This page is a product planning aid, not legal, tax, accounting, investment, or financial advice.</section>
+
+      <section class="panel launch-hero">
+        <div>
+          <p class="eyebrow">Positioning</p>
+          <strong id="business-category">Loading</strong>
+          <p id="business-promise" class="muted">Building the current plan...</p>
+        </div>
+        <div id="business-summary" class="progress-grid"></div>
+      </section>
+
+      <section class="two-column">
+        <article class="panel">
+          <h2>Audience</h2>
+          <div id="business-audience" class="stack-list"></div>
+        </article>
+        <article class="panel">
+          <h2>Revenue Model</h2>
+          <div id="business-pricing" class="stack-list"></div>
+        </article>
+      </section>
+
+      <section class="two-column">
+        <article class="panel">
+          <h2>Launch Milestones</h2>
+          <div id="business-milestones" class="stack-list"></div>
+        </article>
+        <article class="panel">
+          <h2>Operating Model</h2>
+          <div id="business-economics" class="stack-list"></div>
+        </article>
+      </section>
+
+      <section class="two-column">
+        <article class="panel">
+          <h2>Customer Success</h2>
+          <div id="business-success" class="stack-list"></div>
+        </article>
+        <article class="panel">
+          <h2>Safety Controls</h2>
+          <div id="business-risks" class="stack-list"></div>
+        </article>
+      </section>
+
+      <section class="panel">
+        <div class="panel-title-row">
+          <h2>Next Actions</h2>
+          <a class="button small secondary" href="/settings">Settings</a>
+        </div>
+        <div id="business-next-actions" class="stack-list"></div>
+      </section>
+    </main>
+
+    <script>window.TRADEPULSE_SUPABASE_URL = "{{ supabase_url }}"; window.TRADEPULSE_SUPABASE_KEY = "{{ supabase_publishable_key }}";</script>
+    <script src="/static/auth_gate.js"></script>
+    <script src="/static/tradepulse.js"></script>
+  </body>
+</html>

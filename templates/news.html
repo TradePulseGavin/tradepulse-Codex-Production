@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+  <head><meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/static/style.css" /><title>News - TradePulse</title></head>
+  <body data-page="news" data-protected="true" data-required-feature="watchlist">
+    <nav class="topnav"><a class="brand" href="/">TradePulse</a><div class="navlinks"><a href="/dashboard">Dashboard</a><a href="/watchlists">Watchlists</a><a href="/news">News</a><a href="/scanner">Scanner</a><a href="/session-prep">Session Prep</a><a href="/review-center">Review Center</a><a href="/progress">Progress</a><a href="/risk-lab">Risk Lab</a><a href="/live-charts">Live Charts</a><a href="/copilot">Copilot</a><a href="/screenshot-analyzer">Screenshots</a><a href="/alerts">Alerts</a><a href="/paper-trade">Paper</a><a href="/journal">Journal</a><a href="/school">School</a><a href="/pricing">Pricing</a><a href="/account">Account</a></div></nav>
+    <header class="app-header"><div><p class="eyebrow">Market context</p><h1>News research</h1><p class="subtitle">Track demo news risk and provider headlines as context for planning, not as trade instructions.</p></div><span class="pill locked">Context only</span></header>
+    <main>
+      <section class="toolbar"><label>Symbols<input id="news-symbols" value="{{ default_symbols }}" /></label><button id="refresh-news" type="button">Refresh headlines</button></section>
+      <section class="three-cols">
+        <article class="panel"><h2>News impact</h2><div id="news-impact-list" class="stack-list"></div></article>
+        <article class="panel"><h2>What changed</h2><div id="what-changed-list" class="stack-list"></div></article>
+        <article class="panel"><h2>Provider status</h2><div id="news-provider-status" class="stack-list"></div></article>
+      </section>
+      <section class="panel"><h2>Research headlines</h2><div id="news-headlines" class="stack-list"></div></section>
+    </main>
+    <script>window.TRADEPULSE_SUPABASE_URL = "{{ supabase_url }}"; window.TRADEPULSE_SUPABASE_KEY = "{{ supabase_publishable_key }}";</script><script src="/static/auth_gate.js"></script><script src="/static/tradepulse.js"></script>
+  </body>
+</html>

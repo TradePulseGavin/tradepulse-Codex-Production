@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+  <head><meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/static/style.css" /><title>Review Center - TradePulse</title></head>
+  <body data-page="review-center" data-protected="true" data-required-feature="session_prep">
+    <nav class="topnav"><a class="brand" href="/">TradePulse</a><div class="navlinks"><a href="/dashboard">Dashboard</a><a href="/watchlists">Watchlists</a><a href="/news">News</a><a href="/scanner">Scanner</a><a href="/session-prep">Session Prep</a><a href="/review-center">Review Center</a><a href="/progress">Progress</a><a href="/risk-lab">Risk Lab</a><a href="/live-charts">Live Charts</a><a href="/copilot">Copilot</a><a href="/screenshot-analyzer">Screenshots</a><a href="/alerts">Alerts</a><a href="/paper-trade">Paper</a><a href="/journal">Journal</a><a href="/school">School</a><a href="/pricing">Pricing</a><a href="/account">Account</a></div></nav>
+    <header class="app-header"><div><p class="eyebrow">Review loop</p><h1>Review center</h1><p class="subtitle">A safe daily queue for prep, alerts, paper plans, screenshots, journal follow-up, and lessons.</p></div><span class="pill locked">No broker actions</span></header>
+    <main>
+      <section class="notice"><b>Safety mode:</b> {{ required_disclaimer }}</section>
+      <section id="review-center-metrics" class="toolbar compact"></section>
+      <section class="panel"><div class="panel-title-row"><h2>Today&apos;s review queue</h2><button id="refresh-review-center" class="secondary" type="button">Refresh</button></div><div id="review-center-queue" class="stack-list"></div></section>
+    </main>
+    <script>window.TRADEPULSE_SUPABASE_URL = "{{ supabase_url }}"; window.TRADEPULSE_SUPABASE_KEY = "{{ supabase_publishable_key }}";</script><script src="/static/auth_gate.js"></script><script src="/static/tradepulse.js"></script>
+  </body>
+</html>

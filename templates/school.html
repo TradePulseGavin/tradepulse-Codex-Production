@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en">
+  <head><meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/static/style.css" /><title>School - TradePulse</title></head>
+  <body data-page="school" data-protected="true" data-required-feature="school_full">
+    <nav class="topnav"><a class="brand" href="/">TradePulse</a><div class="navlinks"><a href="/dashboard">Dashboard</a><a href="/watchlists">Watchlists</a><a href="/news">News</a><a href="/scanner">Scanner</a><a href="/session-prep">Session Prep</a><a href="/review-center">Review Center</a><a href="/progress">Progress</a><a href="/risk-lab">Risk Lab</a><a href="/live-charts">Live Charts</a><a href="/copilot">Copilot</a><a href="/screenshot-analyzer">Screenshots</a><a href="/alerts">Alerts</a><a href="/paper-trade">Paper</a><a href="/journal">Journal</a><a href="/school">School</a><a href="/pricing">Pricing</a><a href="/account">Account</a></div></nav>
+    <header class="app-header"><div><p class="eyebrow">Beginner school</p><h1>Learn, practice, paper trade, review, improve.</h1><p class="subtitle">Modules adapt to options, futures, journal habits, and risk patterns as real user memory is connected.</p></div><span class="pill elite-lock">Full school: Elite</span></header>
+    <main><section class="school-tabs"><button data-school-tab="Learn">Learn</button><button data-school-tab="Practice">Practice</button><button data-school-tab="Paper trade">Paper trade</button><button data-school-tab="Review">Review</button><button data-school-tab="Improve">Improve</button></section><section id="school-modules" class="module-grid"></section><section class="panel"><h2>Quiz preview</h2><div id="quiz-panel" class="response-box">Select a module to see quiz questions.</div></section></main>
+    <script>window.TRADEPULSE_SUPABASE_URL = "{{ supabase_url }}"; window.TRADEPULSE_SUPABASE_KEY = "{{ supabase_publishable_key }}";</script><script src="/static/auth_gate.js"></script><script src="/static/tradepulse.js"></script>
+  </body>
+</html>
+

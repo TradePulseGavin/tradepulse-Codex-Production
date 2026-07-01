@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/static/style.css" />
+    <title>Dashboard - TradePulse</title>
+  </head>
+  <body data-page="dashboard" data-protected="true">
+    <nav class="topnav"><a class="brand" href="/">TradePulse</a><div class="navlinks"><a href="/dashboard">Dashboard</a><a href="/watchlists">Watchlists</a><a href="/news">News</a><a href="/scanner">Scanner</a><a href="/session-prep">Session Prep</a><a href="/review-center">Review Center</a><a href="/progress">Progress</a><a href="/risk-lab">Risk Lab</a><a href="/live-charts">Live Charts</a><a href="/copilot">Copilot</a><a href="/screenshot-analyzer">Screenshots</a><a href="/alerts">Alerts</a><a href="/paper-trade">Paper</a><a href="/journal">Journal</a><a href="/school">School</a><a href="/launch-center">Launch Center</a><a href="/pricing">Pricing</a><a href="/account">Account</a></div></nav>
+    <header class="app-header"><div><p class="eyebrow">Command center</p><h1>Research dashboard</h1><p class="subtitle">{{ demo_mode_label }} is active until real provider keys are connected.</p></div><div class="status-card"><span class="dot"></span><span id="connection-status">Loading</span></div></header>
+    <main>
+      <section class="notice"><b>Safety mode:</b> {{ required_disclaimer }}</section>
+      <section class="toolbar"><label>Symbols<input id="symbols" value="{{ default_symbols }}" /></label><label>Layout<select id="layout-mode"><option value="command">Elite command center</option><option value="scanner">Scanner mode</option><option value="journal">Journal mode</option><option value="learning">Learning mode</option></select></label><label>Add symbol<input id="watchlist-symbol" placeholder="AMD" /></label><button id="add-watchlist-symbol" type="button">Add symbol</button><button id="refresh-dashboard" type="button">Refresh</button><button id="save-layout" class="secondary" type="button">Save layout</button></section>
+      <section class="panel panel-switcher"><span class="muted">Show panels</span><label class="toggle"><input class="panel-toggle" type="checkbox" data-panel="chart" checked /> Chart</label><label class="toggle"><input class="panel-toggle" type="checkbox" data-panel="prep" checked /> Prep</label><label class="toggle"><input class="panel-toggle" type="checkbox" data-panel="scanner" checked /> Scanner</label><label class="toggle"><input class="panel-toggle" type="checkbox" data-panel="mood" checked /> Mood</label><label class="toggle"><input class="panel-toggle" type="checkbox" data-panel="journal" checked /> Journal</label><label class="toggle"><input class="panel-toggle" type="checkbox" data-panel="memory" checked /> Memory</label><label class="toggle"><input class="panel-toggle" type="checkbox" data-panel="alerts" checked /> Alerts</label><label class="toggle"><input class="panel-toggle" type="checkbox" data-panel="learning" checked /> Learning</label></section>
+      <section id="dashboard-grid" class="dashboard-grid">
+        <article class="panel span-2" data-panel-card="chart"><div class="panel-title-row"><h2>Live chart preview</h2><span class="pill elite-lock">Elite</span></div><canvas id="dashboard-chart" class="chart-canvas" width="920" height="360"></canvas></article>
+        <article class="panel"><h2>Watchlist</h2><div id="watchlist-panel" class="stack-list"></div></article>
+        <article class="panel"><h2>TradePulse Score</h2><div id="score-panel" class="score-card"></div></article>
+        <article class="panel" data-panel-card="prep"><div class="panel-title-row"><h2>Session prep</h2><a class="button small secondary" href="/session-prep">Open</a></div><div id="session-prep-panel" class="stack-list"></div></article>
+        <article class="panel span-2" data-panel-card="scanner"><h2>Setup scanner</h2><div id="scanner-panel" class="scanner-list"></div></article>
+        <article class="panel" data-panel-card="mood"><h2>Market mood</h2><div id="market-mood-panel" class="stack-list"></div></article>
+        <article class="panel" data-panel-card="mood"><h2>News impact</h2><div id="news-impact-panel" class="stack-list"></div></article>
+        <article class="panel"><h2>Since you last checked</h2><div id="changed-panel" class="stack-list"></div></article>
+        <article class="panel"><div class="panel-title-row"><h2>Progress center</h2><a class="button small secondary" href="/progress">Open</a></div><p class="muted">Prep, risk practice, paper review, journaling, screenshots, and lessons in one safe demo loop.</p></article>
+        <article class="panel" data-panel-card="journal"><h2>Journal summary</h2><div id="journal-summary-panel" class="stack-list"></div></article>
+        <article class="panel span-2" data-panel-card="memory"><h2>TradePulse memory</h2><div id="memory-panel" class="stack-list"></div></article>
+        <article class="panel" data-panel-card="alerts"><h2>Alerts</h2><div id="alerts-panel" class="stack-list"></div></article>
+        <article class="panel"><h2>Risk rules</h2><div id="risk-panel" class="stack-list"></div></article>
+        <article class="panel" data-panel-card="learning"><h2>School progress</h2><div id="school-progress-panel" class="stack-list"></div></article>
+      </section>
+    </main>
+    <script>window.TRADEPULSE_SUPABASE_URL = "{{ supabase_url }}"; window.TRADEPULSE_SUPABASE_KEY = "{{ supabase_publishable_key }}";</script><script src="/static/auth_gate.js"></script><script src="/static/tradepulse.js"></script>
+  </body>
+</html>
+

@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+  <head><meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/static/style.css" /><title>Copilot - TradePulse</title></head>
+  <body data-page="copilot" data-protected="true">
+    <nav class="topnav"><a class="brand" href="/">TradePulse</a><div class="navlinks"><a href="/dashboard">Dashboard</a><a href="/watchlists">Watchlists</a><a href="/news">News</a><a href="/scanner">Scanner</a><a href="/session-prep">Session Prep</a><a href="/review-center">Review Center</a><a href="/progress">Progress</a><a href="/risk-lab">Risk Lab</a><a href="/live-charts">Live Charts</a><a href="/copilot">Copilot</a><a href="/screenshot-analyzer">Screenshots</a><a href="/alerts">Alerts</a><a href="/paper-trade">Paper</a><a href="/journal">Journal</a><a href="/school">School</a><a href="/pricing">Pricing</a><a href="/account">Account</a></div></nav>
+    <header class="app-header"><div><p class="eyebrow">AI research assistant</p><h1>TradePulse Copilot</h1><p class="subtitle">Answers are market context, risk review, setup quality, and education only.</p></div><span class="pill">Mock AI if OPENAI_API_KEY is missing</span></header>
+    <main class="two-column">
+      <section class="panel"><div class="toolbar compact"><label>Symbol<input id="copilot-symbol" value="SPY" /></label><label>Asset<select id="copilot-asset"><option>Stock</option><option>ETF</option><option>Option</option><option>Future</option></select></label><label>Timeframe<select id="copilot-timeframe"><option>1m</option><option selected>5m</option><option>15m</option><option>1h</option><option>1D</option></select></label></div><textarea id="copilot-message" rows="7">Summarize this chart like I am a beginner.</textarea><div class="hero-actions"><button id="ask-copilot" type="button">Ask Copilot</button><button class="secondary" data-prompt="What risks should I check before entering?" type="button">Risk check</button><button class="secondary" data-prompt="What changed since I last checked?" type="button">What changed?</button></div><div id="copilot-response" class="response-box"></div></section>
+      <section class="panel"><h2>Trade checklist</h2><div class="form-grid"><input id="check-entry" placeholder="Entry" /><input id="check-stop" placeholder="Stop" /><input id="check-target" placeholder="Target" /><input id="check-reason" placeholder="Reason" /><input id="check-invalid" placeholder="Invalidation" /><select id="check-news"><option>Low</option><option selected>Medium</option><option>High</option></select></div><button id="run-checklist" class="full" type="button">Run checklist</button><div id="checklist-result" class="response-box"></div></section>
+    </main>
+    <script>window.TRADEPULSE_SUPABASE_URL = "{{ supabase_url }}"; window.TRADEPULSE_SUPABASE_KEY = "{{ supabase_publishable_key }}";</script><script src="/static/auth_gate.js"></script><script src="/static/tradepulse.js"></script>
+  </body>
+</html>
+
