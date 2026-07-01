@@ -24,10 +24,10 @@
         <div id="account-status" class="response-box">Checking login...</div>
 
         <div class="hero-actions">
-          <form method="post" action="/billing/checkout?plan=pro"><button type="submit">Upgrade to Pro</button></form>
-          <form method="post" action="/billing/checkout?plan=elite"><button type="submit">Upgrade to Elite</button></form>
-          <form method="post" action="/billing/checkout?plan=all_access"><button type="submit">Upgrade to All Access</button></form>
-          <form method="post" action="/billing/portal"><button class="secondary" type="submit">Manage Billing</button></form>
+          <form data-billing-checkout method="post" action="/billing/checkout?plan=pro"><button type="submit">Upgrade to Pro</button></form>
+          <form data-billing-checkout method="post" action="/billing/checkout?plan=elite"><button type="submit">Upgrade to Elite</button></form>
+          <form data-billing-checkout method="post" action="/billing/checkout?plan=all_access"><button type="submit">Upgrade to All Access</button></form>
+          <form data-billing-portal method="post" action="/billing/portal"><button class="secondary" type="submit">Manage Billing</button></form>
           <a class="button secondary" href="/onboarding">Onboarding</a>
           <a class="button secondary" href="/settings">Settings</a>
           <a class="button secondary" href="/launch-center">Launch Center</a>
@@ -56,5 +56,6 @@
     </main>
     <script>window.TRADEPULSE_SUPABASE_URL = "{{ supabase_url }}"; window.TRADEPULSE_SUPABASE_KEY = "{{ supabase_publishable_key }}";</script>
     <script src="/static/account.js"></script>
+    <script src="/static/billing.js"></script>
   </body>
 </html>

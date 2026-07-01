@@ -1935,9 +1935,36 @@ async def billing_portal(
 
 
 @app.get("/billing/success", response_class=HTMLResponse)
-async def billing_success(request: Request, plan: str = Query(default="pro")) -> HTMLResponse:
+async def billing_success(
+    request: Request,
+    plan: str = Query(default="pro"),
+    session_id: str | None = Query(default=None),
+) -> HTMLResponse:
+    sync_message = "Stripe webhooks should update the Supabase subscription record shortly."
+    if session_id and settings.stripe_secret_key and store.configured:
+        try:
+            import stripe
+
+            stripe.api_key = settings.stripe_secret_key
+            session = stripe.checkout.Session.retrieve(session_id)
+            user_id = getattr(session, "client_reference_id", None) or session.get("client_reference_id")
+            metadata = getattr(session, "metadata", None) or session.get("metadata", {}) or {}
+            synced_plan = str(metadata.get("tradepulse_plan") or plan or "pro").lower()
+            if user_id:
+                store.upsert_subscription(
+                    user_id=user_id,
+                    plan=synced_plan if synced_plan in PAID_PLANS else "pro",
+                    status="active",
+                    stripe_customer_id=getattr(session, "customer", None) or session.get("customer"),
+                    stripe_subscription_id=getattr(session, "subscription", None) or session.get("subscription"),
+                )
+                sync_message = "Your paid plan has been synced to this TradePulse account."
+            else:
+                sync_message = "Checkout finished, but the session did not include a TradePulse user ID. Log in and start checkout again if access does not update."
+        except Exception as exc:
+            sync_message = f"Checkout finished, but subscription sync needs review: {exc}"
     label = PLAN_LABELS.get(plan.lower(), "Pro")
-    return _render_template("billing_success.html", purchased_plan=label)
+    return _render_template("billing_success.html", purchased_plan=label, subscription_sync_message=sync_message)
 
 
 @app.get("/billing/cancel", response_class=HTMLResponse)

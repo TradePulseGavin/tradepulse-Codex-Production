@@ -18,9 +18,9 @@
     <main>
       <section class="pricing-grid four-cols">
         <article class="pricing-card"><p class="eyebrow">Free</p><h2>$0<span>/mo</span></h2><p>Preview the workflow and learn the basics.</p><ul><li>Basic dashboard preview</li><li>Starter market context</li><li>Limited chart preview</li><li>Beginner education preview</li></ul><a class="button secondary full" href="/signup">Create account</a></article>
-        <article class="pricing-card featured"><p class="eyebrow">Pro</p><h2>{{ pro_price }}</h2><p>Core research workspace for building disciplined paper-trading habits.</p><ul><li>Watchlists and scanner</li><li>News research and alerts</li><li>Paper planner and journal</li><li>Session prep and review center</li></ul><form method="post" action="/billing/checkout?plan=pro"><button class="full" type="submit">Upgrade to Pro</button></form></article>
-        <article class="pricing-card elite"><p class="eyebrow">Elite</p><h2>{{ elite_price }}</h2><p>Advanced workspace features without the full AI/data bundle.</p><ul><li>Everything in Pro</li><li>Live chart workspace</li><li>Advanced scanner layout</li><li>Full school and dashboard customization</li></ul><form method="post" action="/billing/checkout?plan=elite"><button class="full" type="submit">Upgrade to Elite</button></form></article>
-        <article class="pricing-card all-access"><p class="eyebrow">All Access</p><h2>{{ all_access_price }}</h2><p>The full TradePulse toolkit for power users.</p><ul><li>Everything in Elite</li><li>AI memory and advanced Copilot</li><li>Screenshot analyzer</li><li>Strategy builder and future premium data tools</li></ul><form method="post" action="/billing/checkout?plan=all_access"><button class="full" type="submit">Upgrade to All Access</button></form></article>
+        <article class="pricing-card featured"><p class="eyebrow">Pro</p><h2>{{ pro_price }}</h2><p>Core research workspace for building disciplined paper-trading habits.</p><ul><li>Watchlists and scanner</li><li>News research and alerts</li><li>Paper planner and journal</li><li>Session prep and review center</li></ul><form data-billing-checkout method="post" action="/billing/checkout?plan=pro"><button class="full" type="submit">Upgrade to Pro</button></form></article>
+        <article class="pricing-card elite"><p class="eyebrow">Elite</p><h2>{{ elite_price }}</h2><p>Advanced workspace features without the full AI/data bundle.</p><ul><li>Everything in Pro</li><li>Live chart workspace</li><li>Advanced scanner layout</li><li>Full school and dashboard customization</li></ul><form data-billing-checkout method="post" action="/billing/checkout?plan=elite"><button class="full" type="submit">Upgrade to Elite</button></form></article>
+        <article class="pricing-card all-access"><p class="eyebrow">All Access</p><h2>{{ all_access_price }}</h2><p>The full TradePulse toolkit for power users.</p><ul><li>Everything in Elite</li><li>AI memory and advanced Copilot</li><li>Screenshot analyzer</li><li>Strategy builder and future premium data tools</li></ul><form data-billing-checkout method="post" action="/billing/checkout?plan=all_access"><button class="full" type="submit">Upgrade to All Access</button></form></article>
       </section>
       <section class="panel pricing-compare">
         <h2>Plan Limits</h2>
@@ -35,5 +35,7 @@
       <section class="notice"><b>Important:</b> {{ required_disclaimer }}</section>
       <nav class="footer-links"><a href="/support">Support</a><a href="/risk-disclosure">Risk disclosure</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></nav>
     </main>
+    <script>window.TRADEPULSE_SUPABASE_URL = "{{ supabase_url }}"; window.TRADEPULSE_SUPABASE_KEY = "{{ supabase_publishable_key }}";</script>
+    <script src="/static/billing.js"></script>
   </body>
 </html>
